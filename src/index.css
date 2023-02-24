@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  background: #f7f7f7;
+  font-family: Inter, sans-serif;  
+
+}
+
+main {
+  max-width:920px;
+  margin:auto;
+}
+
+.sidebar {
+  min-width:300px;
+}
+
+.sidebar-placeholder {
+  width:100%;
+  height:300px;
+  background:#fff;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background:#fff;
+  padding: 10px;
+  border-radius: 5px; 
+  margin-bottom:10px; 
+}
+
+.card-heading {
+  padding:10px; width:100%;
+  border-bottom:1px solid #eee
+}
+
+.card-heading h2 {
+  margin: 0;
+  font-weight: 300;
+}
+.card-heading h3 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.current-cols {
+  display:flex;
+  gap:20px;
+}
+
+.current-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.current-weather-desc {
+  font-size:1.8rem;
+  text-transform: capitalize;
+  margin:.5rem 0;
+}
+
+.current-temp {
+  font-size: 3rem;
+  margin:0;
+  font-weight: 300;
+}
+.current-temps-min-max {
+  display:flex;
+  gap:14px;
+  font-size:.8rem;
+}
+.current-temps-min-max  p {
+  margin-top:8px;
+}
+
+.forecast-wrap {
+  display:flex;
+  margin-top:10px;
+}
+.forecast-item {
+  width:20%;
+  padding:10px;
+  border-right:1px solid #eee;
+  display:flex; 
+  flex-direction:column; 
+  align-items:center;
+  text-align:center;
+}
+.forecast-item:last-of-type {
+  border:none;
+}
+
+.forecast-item p {
+  margin:0 0 5px 0;
+  font-size:.8rem; 
+}
+
+.forecast-time {
+  font-weight:600;
+}
+
+.hourly-heading {
+  display:flex;
+  align-items:center;  
+}
+
+.hour-controls {
+  display: flex;
+  gap:10px;
+  font-size:.8rem;
+  margin-left:auto;
+
+}
+.hour-controls button {
+  cursor:pointer;
+  margin: 0;
+  border:none;
+  background:none;
+  display:flex;
+  align-items: center;
+  gap:3px;
+}
+
+.hour-controls svg {
+  font-size:.6rem;
+}
+p.see-day-link {
+  color:#6666ff;
+  text-decoration: underline;
+  margin-top:5px;
+  cursor:pointer;
+
+}
+
+.side-location-form {
+  margin-top:20px;
+  display:flex;
+}
+.location-field {
+  flex-grow:1;
+  border:1px solid #303030;
+  border-radius:3px 0 0 3px;
+  padding:6px;
+ 
+}
+.location-field:focus {
+  outline:none;
+  border:1px solid #707070;
+}
+.search-btn {
+  min-width:80px;
+  padding:5px;
+  text-transform:uppercase;
+  border:none;
+  border-radius:0 3px 3px 0;
+  color:#fff;
+  background-color:#303030;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.75rem;
+}
+.location-error {
+  font-size:.8rem;
+  color:#ff0000;
+}
+
+@media only screen and (max-width:720px){
+  .card-heading h2 {
+    font-size: 1.2rem;
+  }
+  .current-temp {
+    font-size:2.5rem;
+  }
+  .current-weather-desc {
+    font-size: 1.5rem;
+  }
+  .chosen-day-forecast {
+    flex-direction:column;
+  }
+  .chosen-day-forecast .forecast-item {
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid #eee;
+    flex-direction:row;
+    padding: 0 10px;
+    gap:20px;
+    text-align:left;
+  }
+  .chosen-day-forecast .forecast-item:last-of-type {
+    border-bottom:none; 
+  }
+}
+
+@media only screen and (max-width:480px){
+  .current-cols {
+    flex-direction:column-reverse;
+    gap:0;
+    padding:0 10px;
+  }
+  .forecast-wrap {
+    flex-direction:column;
+  }  
+  .forecast-item {
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid #eee;
+    flex-direction:row;
+    padding: 0 10px;
+    gap:0;
+    text-align:left;   
+    flex-wrap:wrap; 
+  }
+  .forecast-item .forecast-time {
+    width:15%;
+  }
+  .forecast-item .forecast-icon {
+    width:15%;
+  }
+  .forecast-item .forecast-weather {
+    width:50%;
+  }
+  .forecast-item .forecast-temp {
+    width:20%;
+    text-align:right;
+  }
+  .chosen-day-forecast .forecast-item {
+    gap:0;
+  }  
+  p.see-day-link {
+    margin:-5px 0 10px auto;
+  }  
+  .forecast-item:last-of-type {
+    border-bottom:none; 
+  }
+  .hourly-heading {
+    flex-direction: column;
+    align-items:flex-start
+  }
+  .hour-controls {
+    margin:12px 0 0 0;
+    width:100%;
+    justify-content:space-between;
+  }
+  .hour-controls button {
+    padding:0;
+  }
+}
