@@ -7,7 +7,7 @@ function WeekForecast(props){
 
     const weekWeather = props.data.list.map(item => {
             const date = props.getDate(item.dt, props.timezone)
-            if (date.getHours() === (12 + timeDiff)){
+            if (date.getHours() === (13 + timeDiff)){
                 return (
                     <WeekForecastDay
                         key={nanoid()}

@@ -87,6 +87,7 @@ function App() {
         setShowError(false)
       },
       (error) => {
+        console.log(error)
         setShowError(true)
       }
     );
